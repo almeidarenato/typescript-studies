@@ -24,3 +24,30 @@ Permite indicar os tipos das variáveis
 Evita erros que só podem ser vistos após a execução do código.
 Evita uso de forma errada dos dados (soma de string com números por exemplo)
 Resolve o problema de DX - Developer Experience, ao trazer o autocomplete de acordo com o tipo de variável
+
+
+
+## Comando
+
+Compila um arquivo typescript em javascript
+
+```bash 
+    tsc script.ts 
+```
+
+## TSCONFIG
+
+
+Cria arquivo de configurações do typescript (tsconfig.json)
+```bash
+    tsc --init
+```
+Com o arquivo criado basta usar o comando "tsc" no terminal para compilar todos os arquivos para js
+
+
+### Tsc Watch
+Automaticamente a qualquer mudança ele recompila os arquivos usando
+o -w (watch)
+```bash
+    tsc -w
+```
