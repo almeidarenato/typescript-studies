@@ -56,4 +56,4 @@ o -w (watch)
 
 - string 
 - number
-- booler
+- boolean
