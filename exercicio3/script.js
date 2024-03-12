@@ -13,7 +13,7 @@ function toNumber(value) {
         return Number(value);
     }
     else {
-        throw new Error("value deve ser um número ou uma string");
+        throw "value deve ser um número ou uma string";
     }
 }
 console.log("Valor com number: ", toNumber(5));

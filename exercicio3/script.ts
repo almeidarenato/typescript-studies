@@ -6,13 +6,13 @@
 // um número ou uma string")
 
 
-function toNumber(value: number | string | any){
+function toNumber(value: number | string ){
     if(typeof value === "number"){
         return value
     }else if(typeof value === "string"){
         return Number(value)
     }else {
-        throw new Error("value deve ser um número ou uma string")
+        throw "value deve ser um número ou uma string"
     }
 }
 
