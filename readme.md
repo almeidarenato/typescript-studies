@@ -57,3 +57,12 @@ o -w (watch)
 - string 
 - number
 - boolean
+
+### Union Types
+
+É comum funções receber diferentes tipos de dados
+exemplo
+
+```ts
+    let total: string | number = 200 // total pode receber string ou number
+```
