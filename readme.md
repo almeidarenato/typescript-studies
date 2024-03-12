@@ -54,9 +54,15 @@ o -w (watch)
 
 ### Tipos Primitivos do Typescript
 
+
 - string 
 - number
 - boolean
+
+Não confundir com String, Number ou Boolean que são construtores de classe que
+criam objetos 
+exemplo:
+const numero = new Number(8)
 
 ### Union Types
 
@@ -65,4 +71,15 @@ exemplo
 
 ```ts
     let total: string | number = 200 // total pode receber string ou number
+```
+
+### Optional Chaining
+Elementos do DOM sempre podem retornar o elemento OU nulo
+Isso acarreta em problemas caso não seja verificado se o elemento capturado existe.
+Uma forma de evitar o problema é adicionando o Optional Chaining com o "?."
+
+```ts
+const button = document.querySelector('button')
+button?.click();  // optional chaining. Apenas executa se for diferente de null
+// ou diferente de undefined
 ```
