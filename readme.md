@@ -51,3 +51,9 @@ o -w (watch)
 ```bash
     tsc -w
 ```
+
+### Tipos Primitivos do Typescript
+
+- string 
+- number
+- booler
