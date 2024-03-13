@@ -95,3 +95,25 @@ type NumberOrString = number | string;
 let total: NumberOrString = 10; // este tipo aceita numero ou string
 
 ```
+
+## Interface
+Funciona bem similar ao type porém possui mais utilizações e possui 
+uma sintaxe um pouco diferente . É recomendado o uso de Interface para objetos.
+
+```ts
+    // criação de interface
+    interface InterfaceProduto {
+        nome: string;
+        preco: number:
+        teclado: boolean
+    }
+
+     // criação de type 
+    type TypeProduto = {
+        nome: string;
+        preco: number:
+        teclado: boolean
+    }
+
+
+```
