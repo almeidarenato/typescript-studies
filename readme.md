@@ -83,3 +83,15 @@ const button = document.querySelector('button')
 button?.click();  // optional chaining. Apenas executa se for diferente de null
 // ou diferente de undefined
 ```
+
+
+## type 
+Cria um atalho (alias ) para um tipo customizado
+
+exemplo: 
+```ts
+type NumberOrString = number | string;
+
+let total: NumberOrString = 10; // este tipo aceita numero ou string
+
+```
