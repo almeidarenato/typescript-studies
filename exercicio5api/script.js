@@ -7,10 +7,10 @@ const buscaCursos = async () => {
 function showCursos(dados) {
     dados.map(dado => {
         document.body.innerHTML += `
-    <div>${dado.nivel == 'iniciante' ? "<span style='color:blue'>" : "<span style='color:red'>"}  ${dado.nome}</span></div>
+    <h2>${dado.nivel == 'iniciante' ? "<span style='color:blue'>" : "<span style='color:red'>"}  ${dado.nome}</span></h2>
     <div>Horas: ${dado.horas}</div>
-    <div>Tags: <strong> ${dado.tags.map(tag => tag)}</strong></div>
-    <div>Aulas: <strong> ${dado.idAulas.map(idAula => idAula)}</strong></div>
+    <div>Tags: <strong> ${dado.tags.join(", ")}</strong></div>
+    <div>Aulas: <strong> ${dado.idAulas.join(" | ")}</strong></div>
     <div>Gratuítuo: <strong>${dado.gratuito == true ? "sim" : "não"}</strong></div>
     <div>Nível: ${dado.nivel}</div>
     </br>
