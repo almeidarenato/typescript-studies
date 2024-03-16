@@ -117,3 +117,12 @@ uma sintaxe um pouco diferente . É recomendado o uso de Interface para objetos.
 
 
 ```
+
+## Usos do Any Implícito
+
+o indicado para o uso do any é apenas para retornos para retornos do quando há o uso do json() 
+
+exemplo
+```js 
+    const data = await response.json(); // data é um elemento do tipo Any implicito
+```
