@@ -177,6 +177,15 @@ Sem esta coonfiguração do typescript que por padrão (com o strict ativo) o Ty
         }
     }
 ```
-## instanceOf operador do javascript para verificar se um objeto foi instanciado por uma determinada classe , incluíndo classes herdadas
+## instanceOf 
+O Instanceof é um operador do javascript para verificar se um objeto foi instanciado por uma determinada classe , incluíndo classes herdadas
 
 Quando usado no typescript o instanceOf auxilia a exibir as propriedades da classe verificada.
+
+Instanceof não serve para interfaces do typescript. Apenas para classe.
+
+```ts
+if(novoProduto instanceof Livro)
+    console.log(novoProduto.autor) // após a verificação do instanceof o TS já aplica o autocomplete correto 
+
+```
