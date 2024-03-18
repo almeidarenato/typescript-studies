@@ -177,3 +177,6 @@ Sem esta coonfiguração do typescript que por padrão (com o strict ativo) o Ty
         }
     }
 ```
+## instanceOf operador do javascript para verificar se um objeto foi instanciado por uma determinada classe , incluíndo classes herdadas
+
+Quando usado no typescript o instanceOf auxilia a exibir as propriedades da classe verificada.
