@@ -189,3 +189,17 @@ if(novoProduto instanceof Livro)
     console.log(novoProduto.autor) // após a verificação do instanceof o TS já aplica o autocomplete correto 
 
 ```
+
+## Interfaces do DOM
+Ao retornar elementos do DOM com querySelector o objeto retornado dependerá da string que passamos no método
+
+Documentação: https://developer.mozilla.org/en-US/docs/Web/API
+
+Exemplos:
+```js
+document.querySelector('video') //HTMLVideoElement
+document.querySelector('img') //HTMLImageElement
+const link1 = document.querySelector('a') //HTMLAnchorElement
+const link2 = document.querySelector('#origamid'); // Element
+
+```
