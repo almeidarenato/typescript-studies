@@ -135,49 +135,50 @@ Comum a ocorrência em funções que fazem busca no DOM quando não bem sucedida
 localstorage
 
 ```js
-    const button = document.querySelector('button');
-
+const button = document.querySelector("button");
 ```
 
 ## Undefined
 
-Undefined representa variáveis/propriedades que foram instanciadas 
+Undefined representa variáveis/propriedades que foram instanciadas
 porém seus valores não foram definidos
 Undefined é diferente de null.
 
 ```js
-    let total;
-    console.log(total) //undefined
+let total;
+console.log(total); //undefined
 
-    const data = {};
-    console.log(data.nome) //undefined
+const data = {};
+console.log(data.nome); //undefined
 ```
 
 ## Propriedades Opcionais
 
-Podemos definir propriedades opcionais na interface ```opcional?: string ```
+Podemos definir propriedades opcionais na interface `opcional?: string `
 Quando opcional elas poderão retornar um valor definido ou undefined
 
 ```ts
-    interface Product {
-        nome?: string; //nome é opcional e pode retornar undefined
-    }
-
+interface Product {
+  nome?: string; //nome é opcional e pode retornar undefined
+}
 ```
 
 ## strictNullChecks
+
 Sem esta coonfiguração do typescript que por padrão (com o strict ativo) o Typescript assume que qualquer valor pode incluir null | undefined e consequentemente para de checar casos onde o null | undefined podem ser retornados
 
 ```json
-    {
-        "compilerOptions":{
-            "target": "ESNext",
-            "strict": true, //já está incluso essa config no strict
-            "strictNullChecks": true
-        }
-    }
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "strict": true, //já está incluso essa config no strict
+    "strictNullChecks": true
+  }
+}
 ```
-## instanceOf 
+
+## instanceOf
+
 O Instanceof é um operador do javascript para verificar se um objeto foi instanciado por uma determinada classe , incluíndo classes herdadas
 
 Quando usado no typescript o instanceOf auxilia a exibir as propriedades da classe verificada.
@@ -185,21 +186,43 @@ Quando usado no typescript o instanceOf auxilia a exibir as propriedades da clas
 Instanceof não serve para interfaces do typescript. Apenas para classe.
 
 ```ts
-if(novoProduto instanceof Livro)
-    console.log(novoProduto.autor) // após a verificação do instanceof o TS já aplica o autocomplete correto 
-
+if (novoProduto instanceof Livro) console.log(novoProduto.autor); // após a verificação do instanceof o TS já aplica o autocomplete correto
 ```
 
 ## Interfaces do DOM
+
 Ao retornar elementos do DOM com querySelector o objeto retornado dependerá da string que passamos no método
 
+a forma mais segura de lidar com um elemento que você não sabe qual o retorno Ex.; Query selector é usando o instanceOf
 Documentação: https://developer.mozilla.org/en-US/docs/Web/API
 
 Exemplos:
-```js
-document.querySelector('video') //HTMLVideoElement
-document.querySelector('img') //HTMLImageElement
-const link1 = document.querySelector('a') //HTMLAnchorElement
-const link2 = document.querySelector('#origamid'); // Element
 
+```js
+document.querySelector("video"); //HTMLVideoElement
+document.querySelector("img"); //HTMLImageElement
+const link1 = document.querySelector("a"); //HTMLAnchorElement
+const link2 = document.querySelector("#origamid"); // Element
+```
+
+## Interfaces do DOM - Query Selector
+Um querySelectorAll retorna um NodeListOf<Element> . 
+Este tipo de objeto apenas pode executar a função "forEach" para ser percorrido e assim usar os elementos de dentro. E novamente dentro deste tipo "Element" é possível aplicar o instanceOf para identificar qual o tipo
+
+```js
+const links = document.querySelectorAll('.link'); // NodeListOf<Element> (uma array de nodelistOf com Element)
+
+links.forEach((link)=>{
+    if(links instanceof HTMLAnchorElement) {
+        console.log(link.href) // ele sugere href por conta da verificação do instanceOf
+    }
+
+}
+
+// Também é possível transformar o NodeListOf em uma array
+
+const arrayLinks = Array.from(links);
+
+const anchorLinks = arrayLinks.filter(link => link instanceof HTMLAnchorElement)
+//
 ```
