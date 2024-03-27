@@ -2,15 +2,20 @@
 const buttonMenu = document.getElementById("btn-mobile");
 const nav = document.querySelector("nav");
 function toggleMenu(event) {
-    if (nav?.classList.contains("active")) {
-        buttonMenu?.setAttribute("aria-expanded", "false");
-        buttonMenu?.setAttribute("aria-label", "Abrir Menu");
-        nav.setAttribute("class", "");
-    }
-    else {
-        buttonMenu?.setAttribute("aria-expanded", "true");
-        buttonMenu?.setAttribute("aria-label", "Fechar Menu");
-        nav?.setAttribute("class", "active");
+    const active = nav?.classList.contains("active");
+    const button = event.currentTarget;
+    if (button instanceof HTMLElement && nav) {
+        if (active) {
+            if (event.currentTarget instanceof HTMLElement) {
+                button.setAttribute("aria-expanded", "true");
+                button.setAttribute("aria-label", "Fechar Menu");
+            }
+        }
+        else {
+            button.setAttribute("aria-expanded", "false");
+            button.setAttribute("aria-label", "Abrir Menu");
+        }
+        nav?.classList.toggle("active");
     }
 }
 buttonMenu?.addEventListener("pointerdown", toggleMenu);
