@@ -1,7 +1,7 @@
 const buttonMenu = document.getElementById("btn-mobile");
 const nav = document.querySelector("nav");
 
-function handleClickBtn(event: MouseEvent) {
+function toggleMenu(event: PointerEvent) {
   if (nav?.classList.contains("active")) {
     buttonMenu?.setAttribute("aria-expanded", "false");
     buttonMenu?.setAttribute("aria-label", "Abrir Menu");
@@ -10,7 +10,7 @@ function handleClickBtn(event: MouseEvent) {
     buttonMenu?.setAttribute("aria-expanded", "true");
     buttonMenu?.setAttribute("aria-label", "Fechar Menu");
     nav?.setAttribute("class", "active");
-    }
+  }
 }
 
-buttonMenu?.addEventListener("click", handleClickBtn);
+buttonMenu?.addEventListener("pointerdown", toggleMenu);

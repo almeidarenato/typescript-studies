@@ -1,7 +1,7 @@
 "use strict";
 const buttonMenu = document.getElementById("btn-mobile");
 const nav = document.querySelector("nav");
-function handleClickBtn(event) {
+function toggleMenu(event) {
     if (nav?.classList.contains("active")) {
         buttonMenu?.setAttribute("aria-expanded", "false");
         buttonMenu?.setAttribute("aria-label", "Abrir Menu");
@@ -13,4 +13,4 @@ function handleClickBtn(event) {
         nav?.setAttribute("class", "active");
     }
 }
-buttonMenu?.addEventListener("click", handleClickBtn);
+buttonMenu?.addEventListener("pointerdown", toggleMenu);
